@@ -34,7 +34,7 @@ Or open Claude Code in this folder and say what changed.
     "github": "https://github.com/devgreeny",
     "linkedin": "https://www.linkedin.com/in/noahguarini/",
     "resume": "noah-guarini-resume.pdf",
-    "updated": "June 17, 2026"
+    "updated": "June 21, 2026"
   },
   "projects": [
     {
@@ -53,7 +53,10 @@ Or open Claude Code in this folder and say what changed.
       "links": [
         { "label": "GitHub", "url": "https://github.com/devgreeny/pblytics" }
       ],
-      "media": { "type": "video", "src": "media/pblytics-demo.mp4", "poster": "media/pblytics-poster.jpg", "caption": "Live session: real swing on the left, real-time face angle and contact readout on the right." }
+      "media": { "gallery": [
+        { "video": "media/pblytics-0621.mp4", "poster": "media/pblytics-0621-poster.jpg", "audio": true },
+        { "video": "media/pblytics-demo.mp4", "poster": "media/pblytics-poster.jpg" }
+      ] }
     },
     {
       "name": "wheredhego.com",
@@ -382,7 +385,7 @@ document.getElementById('hero').innerHTML = `
 /* projects */
 const statusClass = s => /live|production|24\/7/.test(s) ? 'status' : 'status amber';
 const itemHTML = it => it.video
-  ? `<div class="g-item"><video src="${it.video}" poster="${it.poster||''}" muted loop playsinline preload="metadata"></video></div>`
+  ? `<div class="g-item"><video src="${it.video}" poster="${it.poster||''}" muted loop playsinline preload="metadata"${it.audio?' controls':''}></video></div>`
   : `<div class="g-item"><img src="${it.img}" alt="" loading="lazy"></div>`;
 const mediaHTML = m => {
   if (!m) return '';
